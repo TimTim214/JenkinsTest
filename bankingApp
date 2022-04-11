@@ -14,9 +14,9 @@ public class BankingApp {
         int ch;  
         
         do {  
-            System.out.println("\n ***Banking System Application***");  
-            System.out.println("1. Display all account details \n 2. Search by Account number\n 3. Deposit the amount \n 4. Withdraw the amount \n 5.Exit ");  
-            System.out.println("Enter your choice: ");  
+            System.out.println("Welcome");  
+            System.out.println("1. Display all account details\n 2. Deposit the amount\n 3. Withdraw the amount \n 4.Exit ");  
+            System.out.println("Enter 1,2,3, or 4: ");  
             ch = sc.nextInt();  
                 switch (ch) {  
                    
@@ -24,23 +24,9 @@ public class BankingApp {
                         for (int i = 0; i < C.length; i++) {  
                             C[i].showAccount();  
                         }  
-                        break;  
+                        break;
                     case 2:  
-                        System.out.print("Enter account no. you want to search: ");  
-                        String accNum = sc.next();  
-                        boolean found = false;  
-                        for (int i = 0; i < C.length; i++) {  
-                            found = C[i].search(accNum);  
-                            if (found) {  
-                                break;  
-                            }  
-                        }  
-                        if (!found) {  
-                            System.out.println("Search failed! Account doesn't exist..!!");  
-                        }  
-                        break;  
-                    case 3:  
-                        System.out.print("Enter Account no. : ");  
+                        System.out.print("Enter Account number: ");  
                         accNum = sc.next();  
                         found = false;  
                         for (int i = 0; i < C.length; i++) {  
@@ -51,11 +37,11 @@ public class BankingApp {
                             }
                         }
                         if (!found) {
-                            System.out.println("Search failed! Account doesn't exist..!!");  
+                            System.out.println("Account number does not exist.");  
                         }
                         break;  
-                    case 4:  
-                        System.out.print("Enter Account No : ");  
+                    case 3:  
+                        System.out.print("Enter Account Number: ");  
                         accNum = sc.next();
                         found = false;
                         for (int i = 0; i < C.length; i++) {  
@@ -69,11 +55,11 @@ public class BankingApp {
                             System.out.println("Account doesn't exist.");  
                         }  
                         break;  
-                    case 5:  
-                        System.out.println("Completed");  
+                        
+                    case 4:  
+                        System.out.println("Exiting");  
                         break;  
                 }  
-            }  
-            while (ch != 5);  
+            }   
         }  
     }
