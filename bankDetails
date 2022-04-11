@@ -3,7 +3,7 @@ import java.util.Scanner;
 class BankDetails {  
     private String accno;
     private String acc_type;  
-    private long balance;  
+    private int balance;  
     Scanner sc = new Scanner(System.in);  
     
     public void openAccount() {  
@@ -16,27 +16,27 @@ class BankDetails {
     }  
     
     public void showAccount() {  
-        System.out.println("Account no.: " + accNum);  
+        System.out.println("Account number: " + accNum);  
         System.out.println("Account type: " + accType);  
         System.out.println("Balance: " + balance);  
     }  
-
-    public void deposit() {  
-        long amt;  
-        System.out.println("Enter the amount you want to deposit: ");  
-        depAmount = sc.nextLong();  
-        balance = balance + depAmount;  
-    }  
- 
+    
     public void withdraw() {  
-        long amt;  
+        int amt;  
         System.out.println("Enter the amount you want to withdraw: ");  
-        amt = sc.nextLong();  
+        amt = sc.nextInt();  
         if (balance >= amt) {  
             balance = balance - amt;  
             System.out.println("Balance after withdrawal: " + balance);  
         } else {  
-            System.out.println("Your balance is less than " + amt + "\tTransaction failed." );  
+            System.out.println("Your balance is less than " + amt + ". Invalid operation." );  
         }  
     }  
+
+    public void deposit() {  
+        int amt;  
+        System.out.println("Enter the deposit amount: ");  
+        depAmount = sc.nextInt();  
+        balance = balance + depAmount;  
+    } 
 }
